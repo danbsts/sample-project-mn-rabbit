@@ -1,0 +1,17 @@
+version: "2.4"
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.8-management-alpine
+    ports:
+      - 15672:15672
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+  sample-project:
+    container_name: sample-project
+    build:
+      context: .
+    depends_on:
+      - rabbitmq
+volumes:
+  rabbitmq-data:

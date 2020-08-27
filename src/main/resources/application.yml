@@ -1,0 +1,4 @@
+micronaut:
+  application:
+    name: sampleProjectMnRabbit
+rabbitmq.uri: amqp://rabbitmq:5672
